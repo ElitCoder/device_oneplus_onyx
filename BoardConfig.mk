@@ -51,6 +51,16 @@ TARGET_KERNEL_SOURCE := kernel/oneplus/onyx
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
+# Krait Optimizations
+TARGET_USE_KRAIT_PLD_SET := true
+TARGET_KRAIT_BIONIC_PLDOFFS := 10
+TARGET_KRAIT_BIONIC_PLDTHRESH := 10
+TARGET_KRAIT_BIONIC_BBTHRESH := 64
+TARGET_KRAIT_BIONIC_PLDSIZE := 64
+
+# Bootanimantion Optimizations
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Fixes Wifi-Mobile Data toggle issue
 MALLOC_SVELTE := true
 
