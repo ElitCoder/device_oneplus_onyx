@@ -158,7 +158,7 @@ on property:sys.perf.profile=1
     start mpdecision
 
     write /sys/class/devfreq/qcom,cpubw.40/governor "msm_cpufreq"
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
 
     # Set normal thermal restrictions
     write /sys/kernel/msm_thermal/enabled 0
