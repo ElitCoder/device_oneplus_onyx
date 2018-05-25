@@ -1,10 +1,9 @@
 on early-init
     setprop sys.io.scheduler noop
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     write /sys/class/mmc_host/mmc0/clk_scaling/scale_down_in_low_wr_load 1
 
 on enable-low-power
-    stop mpdecision
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
@@ -37,10 +36,7 @@ on enable-low-power
     write /sys/kernel/cpu_input_boost/ib_duration_ms 1400
     write /sys/kernel/cpu_input_boost/enabled 1
 
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 128
-
     setprop sys.io.scheduler deadline
-    start mpdecision
 
 on charger
     write /sys/module/lpm_levels/enable_low_power/l2 2
