@@ -96,7 +96,7 @@ on property:recovery.perf.mode=0
 
 on property:sys.perf.profile=0
     stop mpdecision
-    write /sys/kernel/msm_thermal/user_maxfreq 1497600
+    write /sys/kernel/msm_thermal/user_maxfreq 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
